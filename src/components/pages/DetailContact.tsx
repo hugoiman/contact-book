@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom"
 import { Card, Form } from "react-bootstrap"
 import { getContact } from '../../services/contact';
-import { ContactDto } from '../../dto/contact';
 
 function DetailContact() {
     let { id = "" } = useParams();
-    const [contact, setContact] = useState<ContactDto>({});
+    const [contact, setContact] = useState({});
     // const [photo, setPhoto] = useState(contact.photo);
 
     useEffect(() => {
