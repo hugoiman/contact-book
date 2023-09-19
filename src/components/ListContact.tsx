@@ -52,7 +52,10 @@ function ListContact() {
             confirmButtonText: 'Yes',
         }).then((result) => {
             if (result.isConfirmed) {
-                deleteContact(rowData.id)                
+                deleteContact(rowData.id)
+                getContacts((res: any) => {
+                    setContacts(res.data);
+                });                
             } 
         })
     }
@@ -77,6 +80,9 @@ function ListContact() {
                 </Card>
                 <ModalEdit contact={editContactData} showModal={showModal} onClose={() => setShowModal(false)} onSave={(id: string, contact: CreateUpdateContactDto) => {
                     updateContact(id,contact, ()=> {
+                        getContacts((res: any) => {
+                            setContacts(res.data);
+                        });
                         setShowModal(false);
                     }, ()=>{})
                 }} />
