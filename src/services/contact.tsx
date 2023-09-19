@@ -14,7 +14,7 @@ const getContact = (callback: any, id: string) => {
                 showCloseButton:true,
             })
         } else {
-            callback(res.data);
+            callback(res.data.data);
         }
     })
     .catch((err) => {

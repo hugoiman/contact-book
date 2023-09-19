@@ -10,11 +10,11 @@ function AddContact() {
         photo: '',
     })
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     }
 
-    const submitButton = (e) => {
+    const submitButton = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
         addContact(form, ()=> {
             resetButton()

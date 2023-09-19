@@ -1,5 +1,4 @@
 interface ContactDto {
-    data(data: any): unknown;
     id: string;
     firstName: string;
     lastName: string;
